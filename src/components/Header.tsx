@@ -7,7 +7,7 @@ function Header() {
             className="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
             href="#"
           >
-            Local
+            Awesome
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500 py-2">
               Player
             </span>
@@ -15,7 +15,7 @@ function Header() {
           <div className="flex w-1/2 justify-end content-center">
             <a
               className="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto transform hover:scale-125 duration-300 ease-in-out mt-4"
-              href="https://github.com/phidn/my-local-player"
+              href="https://github.com/phidn/awesome-player"
             >
               <svg
                 className="fill-current h-8 w-8"

@@ -1,4 +1,4 @@
-# Awesome Player
+# Awesome Player for Local Files
 
 > Simplify local video viewing.  
 > A lightweight video player for local files with easy-to-use interface, offline support, and useful keyboard shortcuts.
