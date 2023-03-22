@@ -1,10 +1,11 @@
-import useRouteElements from "./hooks/useRouteElements"
+// import useRouteElements from "./hooks/useRouteElements"
+import HomePage from "./pages/HomePage"
 
 function App() {
-  const routeElements = useRouteElements()
+  // const routeElements = useRouteElements()
 
   return <div>
-    {routeElements}
+    <HomePage />
   </div>
 }
 
