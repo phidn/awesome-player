@@ -1,18 +1,23 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Awesome Player for Local Files",
   "version": "0.0.1",
-  "description": "Simplify local video viewing. A lightweight video player for local files with easy-to-use interface, offline support, and useful keyboard shortcuts.",
+  "description": "A lightweight video player for local files with easy-to-use interface, offline support, and useful keyboard shortcuts.",
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   },
-  "permissions": ["tabs"],
-  "browser_action": {
-    "default_title": "Awesome Player for Local Files"
-  },
+  "permissions": ["tabs", "storage"],
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Awesome Player for Local Files",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   }
 }
