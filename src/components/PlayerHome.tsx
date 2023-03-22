@@ -67,7 +67,7 @@ function PlayerHome() {
           <div>
             <button
               type="button"
-              className="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+              className="flex absolute top-1/2 transform -translate-y-1/2 left-0 z-30 justify-center items-center px-4 cursor-pointer group focus:outline-none"
               data-carousel-prev
               onClick={handlePrev}
             >
@@ -91,7 +91,7 @@ function PlayerHome() {
             </button>
             <button
               type="button"
-              className="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+              className="flex absolute top-1/2 transform -translate-y-1/2 right-0 z-30 justify-center items-center px-4 cursor-pointer group focus:outline-none"
               data-carousel-next
               onClick={handleNext}
             >
