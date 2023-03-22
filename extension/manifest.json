@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Awesome Player for Local Files",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A lightweight video player for local files with easy-to-use interface, offline support, and useful keyboard shortcuts.",
   "icons": {
     "16": "icons/icon16.png",
