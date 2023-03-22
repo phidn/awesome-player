@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { usePlayerStore } from '../store/usePlayerStore'
-import { getDuration, getThumbnailForVideo } from '../utils/video'
+import { getVideoInfo } from '../utils/video'
 import Loading from './Loading'
 
 function DragZoneHome() {
@@ -16,8 +16,7 @@ function DragZoneHome() {
       for (let i = 0; i < _files.length; i++) {
         const file: File = _files[i]
         const url = URL.createObjectURL(file)
-        const thumbnail = await getThumbnailForVideo(url)
-        const duration = (await getDuration(url)) as string
+        const { thumbnail, duration } = await getVideoInfo(url)
 
         result.push({
           name: file.name,

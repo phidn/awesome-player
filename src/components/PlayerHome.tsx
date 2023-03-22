@@ -37,6 +37,13 @@ function PlayerHome() {
   return videoSelected?.thumbnail ? (
     <div className="max-w-6xl mx-auto px-4 sm:px-6">
       <div className="pt-8 md:pt-10">
+        {/* title of video */}
+        <div className="pb-4 md:pb-6">
+          <h1 className="text-2xl md:text-3xl font-bold leading-tight text-gray-900 dark:text-gray-100">
+            {videoSelected.name}
+          </h1>
+        </div>
+
         <div className="relative">
           <Plyr
             ref={playerRef}
@@ -44,7 +51,7 @@ function PlayerHome() {
               type: 'video',
               sources: [
                 {
-                  src: videoSelected?.url,
+                  src: videoSelected.url,
                   type: 'video/mp4',
                 },
               ],
