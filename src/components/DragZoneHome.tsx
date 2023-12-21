@@ -9,22 +9,21 @@ function DragZoneHome() {
 
   const [loading, setLoading] = useState(false)
 
-  const handleFiles = async (_files: FileList | null) => {
+  const handleFiles = async (_files: File[] | null) => {
     if (_files) {
       setLoading(true)
-      const result = []
-      for (let i = 0; i < _files.length; i++) {
-        const file: File = _files[i]
-        const url = URL.createObjectURL(file)
-        const { thumbnail, duration } = await getVideoInfo(url)
-
-        result.push({
+      const result = await Promise.all(_files.map(async (file) => {
+        const url = URL.createObjectURL(file);
+        const { thumbnail, duration } = await getVideoInfo(url);
+  
+        return {
           name: file.name,
           url,
           thumbnail,
-          duration: duration,
-        })
-      }
+          duration,
+        };
+      }));
+
       setFiles(result)
       Array.from(files).map((file: any) => URL.revokeObjectURL(file))
       setLoading(false)
@@ -43,7 +42,7 @@ function DragZoneHome() {
             accept="video/mp4,video/x-m4v,video/*"
             multiple
             className="cursor-pointer relative block opacity-0 w-full h-full p-20 z-50"
-            onChange={(e) => handleFiles(e.target.files)}
+            onChange={(e) => handleFiles(Object.values(e.target.files as FileList))}
           />
           <div className="text-center p-10 absolute top-0 right-0 left-0 m-auto">
             <h4>

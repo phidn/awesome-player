@@ -76,8 +76,8 @@ export const getVideoInfo = async (videoUrl: string): Promise<VIDEO_INFO> => {
     video.addEventListener('loadedmetadata', () => {
       video.width = video.videoWidth
       video.height = video.videoHeight
-      canvas.width = video.videoWidth
-      canvas.height = video.videoHeight
+      canvas.width = 320
+      canvas.height = Math.ceil((320 / video.videoWidth) * video.videoHeight)
       video.currentTime = video.duration * 0.25
     })
     video.addEventListener('seeked', () => resolve(true))
@@ -87,7 +87,7 @@ export const getVideoInfo = async (videoUrl: string): Promise<VIDEO_INFO> => {
   canvas
     ?.getContext('2d')
     ?.drawImage(video, 0, 0, video.videoWidth, video.videoHeight)
-  const imageUrl = canvas.toDataURL('image/png')
+  const imageUrl = canvas.toDataURL('image/jpeg', 0.5)
 
   return {
     thumbnail: imageUrl,
